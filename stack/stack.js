@@ -9,8 +9,16 @@ class Stack {
   }
 
   push(item) {
-    //adds an item to the end of the stack 
+    //adds an item to the end of the stack
     this.storage[this.count] = item;
     this.count ++;
+  }
+
+  empty() {
+    // check if stack is empty evaluates to bool
+    if (this.count === 0) {
+      return true;
+    }
+    return false;
   }
 }
