@@ -21,4 +21,15 @@ class Stack {
     }
     return false;
   }
+
+  pop() {
+    // removes and returns the last element in the stack.
+    if (this.empty()) {
+      return undefined;
+    }
+    this.count--;
+    let removed = this.storage[this.count];
+    delete this.storage[this.count];
+    return removed;
+  }
 }
