@@ -9,7 +9,7 @@ class Stack {
   }
 
   size() {
-    //returns # items in stask
+    //returns # items in stack
     return this.count;
   }
 
@@ -33,7 +33,7 @@ class Stack {
       return null;
     }
     this.count--;
-    let removed = this.storage[this.count];
+    const removed = this.storage[this.count];
     delete this.storage[this.count];
     return removed;
   }
@@ -44,5 +44,17 @@ class Stack {
       return null;
     }
     return this.storage[(this.count - 1)];
+  }
+
+  swap() {
+    // if Stack has 2 or more elements swap the last 2 elemtns
+    if (this.count > 1) {
+      let last = this.container[this.count - 1];
+      let secondToLast = this.container[this.count - 2];
+      this.container[this.count - 2] = last;
+      this.container[this.count - 1] = secondToLast;
+      return this.container;
+    }
+    return null;
   }
 }
