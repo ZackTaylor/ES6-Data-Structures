@@ -8,6 +8,11 @@ class Stack {
     this.container = {};
   }
 
+  size() {
+    //returns # items in stask
+    return this.count;
+  }
+
   push(item) {
     //adds an item to the end of the stack
     this.storage[this.count] = item;
