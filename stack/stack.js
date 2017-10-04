@@ -16,7 +16,7 @@ class Stack {
   push(item) {
     //adds an item to the end of the stack
     this.storage[this.count] = item;
-    this.count ++;
+    this.count++;
   }
 
   empty() {
@@ -30,11 +30,19 @@ class Stack {
   pop() {
     // removes and returns the last element in the stack.
     if (this.empty()) {
-      return undefined;
+      return null;
     }
     this.count--;
     let removed = this.storage[this.count];
     delete this.storage[this.count];
     return removed;
+  }
+
+  peek() {
+    // if stack not empty return last element
+    if (this.empty()) {
+      return null;
+    }
+    return this.storage[(this.count - 1)];
   }
 }
