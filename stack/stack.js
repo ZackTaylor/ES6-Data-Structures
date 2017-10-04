@@ -7,4 +7,10 @@ class Stack {
     this.count = 0;
     this.container = {};
   }
+
+  push(item) {
+    //adds an item to the end of the stack 
+    this.storage[this.count] = item;
+    this.count ++;
+  }
 }
