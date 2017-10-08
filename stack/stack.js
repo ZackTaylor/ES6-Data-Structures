@@ -5,7 +5,7 @@ module.exports.Stack = class Stack {
   constructor() {
     // init new stack with a count of 0 and an empty container object.
     this.count = 0;
-    this.container = {};
+    this.storage = {};
   }
 
   size() {
