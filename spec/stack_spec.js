@@ -63,4 +63,20 @@ describe('Stack', function () {
     });
   });
 
+  describe('#peek', function () {
+
+    it('returns the last element in storage.', function () {
+        let newItems = ['New', 'Stuff'];
+        stack.push(newItems[0]);
+        stack.push(newItems[1]);
+      expect(stack.peek()).toEqual('Stuff');
+    });
+
+    it('returns null if storage is empty.', function () {
+      expect(stack.peek()).toBeNull();
+    });
+  });
+
+
+
 });
