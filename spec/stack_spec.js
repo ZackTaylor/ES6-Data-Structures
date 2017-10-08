@@ -54,11 +54,11 @@ describe('Stack', function () {
     });
 
     it('removes the last element in storage.', function () {
-      stack.pop()
+      stack.pop();
       expect(stack.size()).toEqual(1);
     });
 
-    it('returns the rmeoved element from the storage.', function () {
+    it('returns the removed element from the storage.', function () {
       expect(stack.pop()).toEqual('Stuff');
     });
   });
