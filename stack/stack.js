@@ -4,7 +4,7 @@ module.exports = class Stack {
   */
 
   constructor() {
-    // init new stack with a count of 0 and an empty container object.
+    // init new stack with a count of 0 and an empty storage object.
     this.count = 0;
     this.storage = {};
   }
@@ -51,13 +51,13 @@ module.exports = class Stack {
   }
 
   swap() {
-    // if Stack has 2 or more elements swap the last 2 elemtns
+    // if Stack has 2 or more elements swap the last 2 elements
     if (this.count > 1) {
-      let last = this.container[this.count - 1];
-      let secondToLast = this.container[this.count - 2];
-      this.container[this.count - 2] = last;
-      this.container[this.count - 1] = secondToLast;
-      return this.container;
+      let last = this.storage[this.count - 1];
+      let secondToLast = this.storage[this.count - 2];
+      this.storage[this.count - 2] = last;
+      this.storage[this.count - 1] = secondToLast;
+      return this.storage;
     }
 
     return null;
