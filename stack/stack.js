@@ -1,11 +1,11 @@
-class Stack {
+module.exports.Stack = class Stack {
   /*
   Last in first out
   */
   constructor() {
     // init new stack with a count of 0 and an empty container object.
     this.count = 0;
-    this.container = {};
+    this.storage = {};
   }
 
   size() {
@@ -24,6 +24,7 @@ class Stack {
     if (this.count === 0) {
       return true;
     }
+
     return false;
   }
 
@@ -32,6 +33,7 @@ class Stack {
     if (this.empty()) {
       return null;
     }
+
     this.count--;
     const removed = this.storage[this.count];
     delete this.storage[this.count];
@@ -43,7 +45,8 @@ class Stack {
     if (this.empty()) {
       return null;
     }
-    return this.storage[(this.count - 1)];
+
+    return this.storage[this.count - 1];
   }
 
   swap() {
@@ -55,6 +58,7 @@ class Stack {
       this.container[this.count - 1] = secondToLast;
       return this.container;
     }
+
     return null;
   }
-}
+};
