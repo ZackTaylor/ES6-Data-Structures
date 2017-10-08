@@ -85,7 +85,6 @@ describe('Stack', function () {
       stack.push(newItems[1]);
       stack.push(newItems[2]);
       expect(stack.swap()).toEqual({ 0: 'New', 1: 'Cool', 2: 'Stuff'});
-      console.log(stack.storage)
     });
 
     it('returns null if storage is empty.', function () {
