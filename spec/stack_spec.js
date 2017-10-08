@@ -9,7 +9,7 @@ describe('Stack', function () {
   describe('#constructor', function () {
 
     it('creates a new stack with a size of 0.', function () {
-      expect(stack.count).toEqual(0);
+      expect(stack.size()).toEqual(0);
     });
 
     it('creates a new stack with an empty storage.', function () {
@@ -29,7 +29,7 @@ describe('Stack', function () {
     });
 
     it('changes the count of the stack when new item pushed.', function () {
-      expect(stack.count).toEqual(1);
+      expect(stack.size()).toEqual(1);
     });
   });
 
@@ -43,6 +43,23 @@ describe('Stack', function () {
       let newItem = ['New', 'Stuff'];
       stack.push(newItem);
       expect(stack.empty()).toEqual(false);
+    });
+  });
+
+  describe('#pop', function () {
+    beforeEach(function () {
+        let newItems = ['New', 'Stuff'];
+        stack.push(newItems[0]);
+        stack.push(newItems[1]);
+    });
+
+    it('removes the last element in storage.', function () {
+      stack.pop()
+      expect(stack.size()).toEqual(1);
+    });
+
+    it('returns the rmeoved element from the storage.', function () {
+      expect(stack.pop()).toEqual('Stuff');
     });
   });
 
