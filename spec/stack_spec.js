@@ -1,4 +1,4 @@
-const { Stack } = require('../stack/stack.js');
+const Stack = require('../stack/stack.js');
 describe('Stack', function () {
   let stack;
 
@@ -7,6 +7,7 @@ describe('Stack', function () {
   });
 
   describe('#constructor', function () {
+
     it('creates a new stack with a size of 0.', function () {
       expect(stack.count).toEqual(0);
     });
@@ -19,7 +20,6 @@ describe('Stack', function () {
   describe('#push', function () {
 
     beforeEach(function () {
-      stack = new Stack();
       let newItem = ['New', 'Stuff'];
       stack.push(newItem);
     });
@@ -30,6 +30,19 @@ describe('Stack', function () {
 
     it('changes the count of the stack when new item pushed.', function () {
       expect(stack.count).toEqual(1);
+    });
+  });
+
+  describe('#empty', function () {
+
+    it('returns true when Stack is empty.', function () {
+      expect(stack.empty()).toEqual(true);
+    });
+
+    it('returns false when stack has items in it.', function () {
+      let newItem = ['New', 'Stuff'];
+      stack.push(newItem);
+      expect(stack.empty()).toEqual(false);
     });
   });
 
